@@ -1,0 +1,46 @@
+- id: Cast_Stopped
+  alias: "Vizio Paused/Stopped"
+  trigger:
+    - platform: state
+      entity_id: media_player.ex_luna
+      from: 'playing'
+      to: 'idle'
+      for:
+          seconds: 30
+  action:
+    service: scene.turn_on
+    entity_id: scene.Movie_Paused
+
+- id: Cast_Playing
+  alias: "Vizio Playing"
+  trigger:
+    - platform: state
+      entity_id: media_player.ex_luna
+      to: 'playing'
+  action:
+    service: scene.turn_on
+    entity_id: scene.Movie_Time
+
+- id: TV_On
+  alias: "Vizio On"
+  trigger:
+    - platform: state
+      entity_id: media_player.vizio_smartcast
+      to: 'on'
+  action:
+    service: light.turn_on
+    entity_id: light.tv_light
+    data:
+      brightness_pct: 100
+
+- id: TV_Off
+  alias: "Vizio Off"
+  trigger:
+    - platform: state
+      entity_id: media_player.vizio_smartcast
+      to: 'off'
+  action:
+    service: light.turn_on
+    entity_id: light.tv_light
+    data:
+      brightness_pct: 100

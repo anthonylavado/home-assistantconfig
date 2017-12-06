@@ -1,0 +1,81 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: The Lavado's
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 110
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Toronto
+
+  customize: !include customize.yaml
+  customize_glob: !include customize_glob.yaml
+
+##### HERE COMES THE STUFF! #####
+
+# Enables the frontend, and configuration
+frontend:
+  javascript_version: latest
+config:
+http:
+  api_password: !secret hass_pass
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
+  base_url: !secret base_url
+updater:
+history:
+logbook:
+logger:
+  default: info
+  logs:
+    homeassistant.components.media_player: error
+##### END BASIC BLOCK #####
+
+##### SENSOR BLOCK #####
+sun:
+# Weather Prediction
+sensor:
+  - platform: yr
+
+##### END SENSOR BLOCK #####
+
+##### INTERACTION BLOCK #####
+conversation:
+tts:
+  platform: google
+##### END INTERACTION BLOCK #####
+
+##### Interfaces Block #####
+ios:
+##### End Interfaces Block #####
+
+##### Physical Control Block #####
+# Wink provides Z-Wave/ZigBee services
+wink:
+lock:
+    platform: lockitron
+    access_token: !secret lock_access_token
+    id: !secret lock_id
+nest:
+    client_id: !secret nest_client_id
+    client_secret: !secret nest_client_secret
+##### End Physical Control Block #####
+
+##### Media Block #####
+media_player vizio:
+  - platform: vizio
+    host: 192.168.0.155
+    access_token: !secret vizio_token
+  - platform: cast
+##### End Media Block #####
+
+##### Automation - The Fun Stuff #####
+automation: !include automations.yaml
+scene: !include scene.yaml
+##### End Automation #####
+
+
+group: !include groups.yaml

@@ -1,0 +1,4 @@
+"binary_sensor.living_room_thermostat_*":
+  hidden: true
+"sensor.living_room_thermostat*":
+  hidden: true

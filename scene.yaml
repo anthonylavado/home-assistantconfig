@@ -1,0 +1,20 @@
+- name: Movie Paused
+  entities:
+      light.tv_light:
+          state: on
+          transition: 15
+          brightness_pct: 100
+
+- name: Movie Time
+  entities:
+      light.tv_light:
+          state: on
+          brightness_pct: 1
+      light.basement_hallway_3:
+          state: off
+      light.basement_hallway_2:
+          state: off
+      light.basement_hallway_1:
+          state: off
+      media_player.vizio_smartcast:
+          source: CAST 
