@@ -1,46 +1,57 @@
-- id: Cast_Stopped
-  alias: "Vizio Paused/Stopped"
+- id:                   Cast_Stopped
+  alias:                "Vizio Paused/Stopped"
   trigger:
-    - platform: state
-      entity_id: media_player.ex_luna
-      from: 'playing'
-      to: 'idle'
+    - platform:         state
+      entity_id:        media_player.ex_luna
+      from:             'playing'
+      to:               'idle'
       for:
-          seconds: 30
+          seconds:      30
   action:
-    service: scene.turn_on
-    entity_id: scene.Movie_Paused
+    service:            scene.turn_on
+    entity_id:          scene.Movie_Paused
 
-- id: Cast_Playing
-  alias: "Vizio Playing"
+- id:                   Cast_Playing
+  alias:                "Vizio Playing"
   trigger:
-    - platform: state
-      entity_id: media_player.ex_luna
-      to: 'playing'
+    - platform:         state
+      entity_id:        media_player.ex_luna
+      to:               'playing'
   action:
-    service: scene.turn_on
-    entity_id: scene.Movie_Time
+    - service:          light.turn_on
+      entity_id:          light.tv_light
+      data:
+        brightness_pct: 1
+    - service:          light.turn_off
+      entity_id:          light.basement_hallway_3
+    - delay:              00:00:05
+    - service:          light.turn_off
+      entity_id:          light.basement_hallway_2
+    - delay:              00:00:05
+    - service:          light.turn_off
+      entity_id:          light.basement_hallway_1
 
-- id: TV_On
-  alias: "Vizio On"
+
+- id:                   TV_On
+  alias:                "Vizio On"
   trigger:
-    - platform: state
-      entity_id: media_player.vizio_smartcast
-      to: 'on'
+    - platform:         state
+      entity_id:        media_player.vizio_smartcast
+      to:               'on'
   action:
-    service: light.turn_on
-    entity_id: light.tv_light
+    service:            light.turn_on
+    entity_id:          light.tv_light
     data:
-      brightness_pct: 100
+      brightness_pct:   100
 
-- id: TV_Off
-  alias: "Vizio Off"
+- id:                   TV_Off
+  alias:                "Vizio Off"
   trigger:
-    - platform: state
-      entity_id: media_player.vizio_smartcast
-      to: 'off'
+    - platform:         state
+      entity_id:        media_player.vizio_smartcast
+      to:               'off'
   action:
-    service: light.turn_on
-    entity_id: light.tv_light
+    service:            light.turn_on
+    entity_id:          light.tv_light
     data:
-      brightness_pct: 100
+      brightness_pct:   100
