@@ -7,5 +7,5 @@ install:
   - pip3 install homeassistant
 script:
   - hass -c . --script check_config
- notifications:
+notifications:
      webhooks: https://chat.bonifacelabs.ca/hooks/7JMEsfq69FGGrs4Mm/BnHezHkBjwDMtTM7ZckmXMWGvS8bF2cpkxizZsscSLxwjS7J
