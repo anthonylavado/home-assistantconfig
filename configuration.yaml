@@ -42,6 +42,7 @@ sensor:
   - platform:                              xbox_live
     api_key:                               !secret xbox_api_key
     xuid:                                  !secret xbox_profile
+    scan_interval:                         60
 
 ##### END SENSOR BLOCK #####
 
