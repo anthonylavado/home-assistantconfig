@@ -18,7 +18,6 @@ homeassistant:
 
 # Enables the frontend, and configuration
 frontend:
-  javascript_version:                      latest
 config:
 http:
   api_password:                            !secret hass_pass
