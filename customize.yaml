@@ -1,18 +1,20 @@
 media_player.living_room:
-  friendly_name: Apple TV
+  friendly_name:                             Apple TV
 climate.home_living_room_thermostat:
-  hidden: true
+  hidden:                                    true
 binary_sensor.remote:
-  hidden: true
+  hidden:                                    true
 lock.lockitron:
-  friendly_name: Front Door
+  friendly_name:                             Front Door
 scene.basementtv_dim:
-  hidden: true
+  hidden:                                    true
 scene.basementtv_normal:
-  hidden: true
+  hidden:                                    true
 sensor.anthony_lavados_iphone_battery_state:
-  hidden: true
+  hidden:                                    true
 sensor.anthony_lavados_iphone_battery_level:
-  hidden: true
+  hidden:                                    true
 device_tracker.anthony_lavados_iphone:
-  friendly_name: Anthony's iPhone
+  friendly_name:                             Anthony's iPhone
+sensor.anthony_lavado:
+    friendly_name:                           Xbox One

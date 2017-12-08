@@ -1,6 +1,0 @@
-- name: Movie Paused
-  entities:
-      light.tv_light:
-          state: on
-          transition: 15
-          brightness_pct: 100

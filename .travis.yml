@@ -1,4 +1,4 @@
-language: python
+language:       python
 python:
   - "3.5"
 before_install:
@@ -8,4 +8,4 @@ install:
 script:
   - hass -c . --script check_config
 notifications:
-     webhooks: https://chat.bonifacelabs.ca/hooks/7JMEsfq69FGGrs4Mm/BnHezHkBjwDMtTM7ZckmXMWGvS8bF2cpkxizZsscSLxwjS7J
+     webhooks:  https://chat.bonifacelabs.ca/hooks/7JMEsfq69FGGrs4Mm/BnHezHkBjwDMtTM7ZckmXMWGvS8bF2cpkxizZsscSLxwjS7J

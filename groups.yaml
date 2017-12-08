@@ -1,0 +1,33 @@
+bedroom:
+    name:     Bedroom
+    view:     yes
+    icon:     mdi:bed
+    entities:
+        - light.anthonys_light
+        - light.michelles_light
+
+living_room:
+    name:     Living Room
+    view:     yes
+    entities:
+        - climate.living_room
+        - switch.floor_lamp
+
+entrance:
+    name:     Entrance
+    view:     yes
+    icon:     mdi:door
+    entities:
+        - switch.outside_light
+        - lock.lockitron
+
+basement:
+    name:     Basement
+    view:     yes
+    icon:     mdi:tv
+    entities:
+        - light_basement_hallway
+        - light.tv_light
+        - media_player.ex_luna
+        - media_player.vizio_smartcast
+        - sensor.anthony_lavado

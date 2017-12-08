@@ -1,16 +1,48 @@
 movie_lights:
-    alias:                Movie Lights
+    alias:                    Movie Lights
     sequence:
-      - service:          light.turn_on
-        entity_id:        light.tv_light
+      - service:              light.turn_on
+        entity_id:            light.tv_light
         data:
-          brightness_pct: 1
-      - delay:            00:00:03
-      - service:          light.turn_off
-        entity_id:        light.basement_hallway_3
-      - delay:            00:00:03
-      - service:          light.turn_off
-        entity_id:        light.basement_hallway_2
-      - delay:            00:00:03
-      - service:          light.turn_off
-        entity_id:        light.basement_hallway_1
+          brightness_pct:     1
+      - delay:                00:00:03
+      - service:              light.turn_off
+        entity_id:            light.basement_hallway_3
+      - delay:                00:00:03
+      - service:              light.turn_off
+        entity_id:            light.basement_hallway_2
+      - delay:                00:00:03
+      - service:              light.turn_off
+        entity_id:            light.basement_hallway_1
+
+movie_idle:
+    alias:                    Movie Idle
+    sequence:
+        - service:            light.turn_on
+          entity_id:          light.tv_light
+          data:
+              brightness_pct: 50
+
+lights_up:
+    alias:                    Basement Lights Up
+    sequence:
+        - service:            light.turn_on
+          entity_id:          light.tv_light
+          data:
+              brightness_pct: 100
+
+movie_time:
+    alias:                    Movie Time
+    sequence:
+        - service:            media_player.turn_on
+          entity_id:          media_player.ex_luna
+
+xbox_time:
+    alias:                    Xbox Time
+    sequence:
+        - service:            media_player.turn_on
+          entity_id:          media_player.vizio_smartcast
+        - service:            media_player.select_source
+          entity_id:          media_player.vizio_smartcast
+          data:
+              source:         HDMI-4
