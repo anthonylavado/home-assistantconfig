@@ -26,7 +26,7 @@ basement:
     view:     yes
     icon:     mdi:tv
     entities:
-        - light_basement_hallway
+        - light.basement_hallway
         - light.tv_light
         - media_player.ex_luna
         - media_player.vizio_smartcast
