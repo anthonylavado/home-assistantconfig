@@ -39,6 +39,9 @@ sun:
 # Weather Prediction
 sensor:
   - platform: yr
+  - platform: xbox_live
+    api_key: !secret xbox_api_key
+    xuid: !secret xbox_profile
 
 ##### END SENSOR BLOCK #####
 
@@ -75,6 +78,8 @@ media_player vizio:
 ##### Automation - The Fun Stuff #####
 automation: !include automations.yaml
 scene: !include scene.yaml
+script: !include scripts.yaml
+#eventually going to do a !include_dir_merge_named script
 ##### End Automation #####
 
 

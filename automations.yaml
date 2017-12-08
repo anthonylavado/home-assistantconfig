@@ -18,18 +18,7 @@
       entity_id:        media_player.ex_luna
       to:               'playing'
   action:
-    - service:          light.turn_on
-      entity_id:          light.tv_light
-      data:
-        brightness_pct: 1
-    - service:          light.turn_off
-      entity_id:          light.basement_hallway_3
-    - delay:              00:00:05
-    - service:          light.turn_off
-      entity_id:          light.basement_hallway_2
-    - delay:              00:00:05
-    - service:          light.turn_off
-      entity_id:          light.basement_hallway_1
+    - service:          script.movie_lights
 
 
 - id:                   TV_On
