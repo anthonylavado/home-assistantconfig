@@ -1,7 +1,6 @@
 bedroom:
     name:     Bedroom
     view:     yes
-    icon:     mdi:bed
     entities:
         - light.anthonys_light
         - light.michelles_light
@@ -16,7 +15,6 @@ living_room:
 entrance:
     name:     Entrance
     view:     yes
-    icon:     mdi:door
     entities:
         - switch.outside_light
         - lock.lockitron
@@ -24,7 +22,6 @@ entrance:
 basement:
     name:     Basement
     view:     yes
-    icon:     mdi:tv
     entities:
         - light.basement_hallway
         - light.tv_light
