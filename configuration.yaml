@@ -55,7 +55,12 @@ tts:
 ios:
 alexa:
     smart_home:
-    
+        filter:
+            include_entities:
+                - media_player.ex_luna
+                - media_player.vizio_smartcast
+            include_domains:
+                - script
 
 ##### End Interfaces Block #####
 
