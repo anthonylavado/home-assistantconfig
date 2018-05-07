@@ -1,14 +1,14 @@
-- id:              Cast_Stopped
-  alias:           "Vizio Paused/Stopped"
-  trigger:
-    - platform:    state
-      entity_id:   media_player.ex_luna
-      from:        'playing'
-      to:          'idle'
-      for:
-          seconds: 30
-  action:
-    service:       script.movie_idle
+#- id:              Cast_Stopped
+#  alias:           "Vizio Paused/Stopped"
+#  trigger:
+#    - platform:    state
+#      entity_id:   media_player.ex_luna
+#      from:        'playing'
+#      to:          'idle'
+#      for:
+#          seconds: 30
+#  action:
+#    service:       script.movie_idle
 
 - id:              Cast_Playing
   alias:           "Vizio Playing"
