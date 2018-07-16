@@ -82,6 +82,11 @@ media_player vizio:
     host:                                  192.168.0.155
     access_token:                          !secret vizio_token
   - platform:                              cast
+
+apple_tv:
+  - host:                                  192.168.0.120
+  - host:                                  192.168.0.125
+
 ##### End Media Block #####
 
 ##### Automation - The Fun Stuff #####
