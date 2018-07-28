@@ -11,6 +11,7 @@ living_room:
     entities:
         - climate.living_room
         - switch.floor_lamp
+        - media_player.living_room
 
 entrance:
     name:     Entrance
@@ -28,4 +29,5 @@ basement:
         - light.tv_light
         - media_player.ex_luna
         - media_player.vizio_smartcast
+        - media_player.basement
         - sensor.anthony_lavado
