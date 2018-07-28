@@ -87,7 +87,7 @@ media_player vizio:
 
 apple_tv:
   - host: 192.168.0.120
-    login_id: secret atv1_id
+    login_id: !secret atv1_id
     start_off: true
 
 ##### End Media Block #####
