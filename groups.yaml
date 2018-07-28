@@ -18,6 +18,7 @@ entrance:
     entities:
         - switch.outside_light
         - lock.lockitron
+        - switch.stairway_light
 
 basement:
     name:     Basement
