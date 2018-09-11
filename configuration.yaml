@@ -35,20 +35,19 @@ logger:
 
 ##### SENSOR BLOCK #####
 sun:
-# Weather Prediction
+
 sensor:
   - platform:                              yr
+
   - platform:                              xbox_live
     api_key:                               !secret xbox_api_key
     xuid:                                  !secret xbox_profile
-    scan_interval:                         60
+    scan_interval:                         300
 
 ##### END SENSOR BLOCK #####
 
 ##### INTERACTION BLOCK #####
-conversation:
-tts:
-  platform:                                google
+
 ##### END INTERACTION BLOCK #####
 
 ##### Interfaces Block #####
