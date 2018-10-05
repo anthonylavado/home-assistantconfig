@@ -88,9 +88,13 @@ apple_tv:
   - host:                                  192.168.0.120
     login_id:                              !secret atv1_id
     start_off:                             true
-  - host:                                192.168.0.125
-    login_id:                            !secret atv2_id
-    start_off:                           true
+  - host:                                  192.168.0.125
+    login_id:                              !secret atv2_id
+    start_off:                             false
+
+rest_command:
+  example_request:
+    url: 'http://192.168.0.130/msg?code=10EF08F7:NEC:32&pass=1234&out=4'
 
 ##### End Media Block #####
 
