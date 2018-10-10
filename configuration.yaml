@@ -57,7 +57,6 @@ alexa:
         filter:
             include_entities:
                 - media_player.ex_luna
-                - media_player.vizio_smartcast
             include_domains:
                 - script
 
@@ -92,9 +91,29 @@ apple_tv:
     login_id:                              !secret atv2_id
     start_off:                             false
 
+media_player:
+  - platform: universal
+    name: Screen
+    children:
+      - media_player.vizio
+    commands:
+      volume_up:
+        service: rest_command.logitech_speakers_volume_up
+      volume_down:
+        service: rest_command.logitech_speakers_volume_down
+      volume_mute:
+        service: rest_command.logitech_speakers_volume_mute
+
 rest_command:
-  example_request:
+  logitech_speakers_power_toggle:
     url: 'http://192.168.0.130/msg?code=10EF08F7:NEC:32&pass=1234&out=4'
+  logitech_speakers_volume_up:
+      url: 'http://192.168.0.130:80/msg?code=10EF58A7:NEC:32&pass=1234&out=4'
+  logitech_speakers_volume_down:
+      url: 'http://192.168.0.130:80/msg?code=10EF708F:NEC:32&pass=1234&out=4'
+  logitech_speakers_volume_mute:
+      url: 'http://192.168.0.130:80/msg?code=10EF6897:NEC:32'
+
 
 ##### End Media Block #####
 
