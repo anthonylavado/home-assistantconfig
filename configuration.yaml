@@ -89,7 +89,7 @@ apple_tv:
     start_off:                             true
   - host:                                  192.168.0.125
     login_id:                              !secret atv2_id
-    start_off:                             false
+    start_off:                             true
 
 media_player:
   - platform: universal
