@@ -20,7 +20,6 @@ homeassistant:
 frontend:
 config:
 http:
-  api_password:                            !secret hass_pass
   ssl_certificate:                         !secret ssl_certificate
   ssl_key:                                 !secret ssl_key
   base_url:                                !secret base_url
@@ -39,10 +38,11 @@ sun:
 sensor:
   - platform:                              yr
 
-  - platform:                              xbox_live
-    api_key:                               !secret xbox_api_key
-    xuid:                                  !secret xbox_profile
-    scan_interval:                         300
+## Will restructure later on
+ # - platform:                              xbox_live
+#    api_key:                               !secret xbox_api_key
+#    xuid:                                  !secret xbox_profile
+#    scan_interval:                         300
 
 ##### END SENSOR BLOCK #####
 
@@ -55,8 +55,6 @@ ios:
 alexa:
     smart_home:
         filter:
-            include_entities:
-                - media_player.ex_luna
             include_domains:
                 - script
 
@@ -90,30 +88,6 @@ apple_tv:
   - host:                                  192.168.0.125
     login_id:                              !secret atv2_id
     start_off:                             true
-
-media_player:
-  - platform: universal
-    name: Screen
-    children:
-      - media_player.vizio
-    commands:
-      volume_up:
-        service: rest_command.logitech_speakers_volume_up
-      volume_down:
-        service: rest_command.logitech_speakers_volume_down
-      volume_mute:
-        service: rest_command.logitech_speakers_volume_mute
-
-rest_command:
-  logitech_speakers_power_toggle:
-    url: 'http://192.168.0.130/msg?code=10EF08F7:NEC:32&pass=1234&out=4'
-  logitech_speakers_volume_up:
-      url: 'http://192.168.0.130:80/msg?code=10EF58A7:NEC:32&pass=1234&out=4'
-  logitech_speakers_volume_down:
-      url: 'http://192.168.0.130:80/msg?code=10EF708F:NEC:32&pass=1234&out=4'
-  logitech_speakers_volume_mute:
-      url: 'http://192.168.0.130:80/msg?code=10EF6897:NEC:32'
-
 
 ##### End Media Block #####
 

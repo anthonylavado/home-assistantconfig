@@ -10,30 +10,30 @@
 #  action:
 #    service:       script.movie_idle
 
-- id:              Cast_Playing
-  alias:           "Vizio Playing"
-  trigger:
-    - platform:    state
-      entity_id:   media_player.ex_luna
-      to:          'playing'
-  action:
-    - service:     script.movie_lights
+# - id:              Cast_Playing
+#   alias:           "Vizio Playing"
+#   trigger:
+#     - platform:    state
+#       entity_id:   media_player.ex_luna
+#       to:          'playing'
+#   action:
+#     - service:     script.movie_lights
 
-
-- id:              TV_On
-  alias:           "Vizio On"
-  trigger:
-    - platform:    state
-      entity_id:   media_player.vizio_smartcast
-      to:          'on'
-  action:
-    service:       script.lights_up
-
-- id:              TV_Off
-  alias:           "Vizio Off"
-  trigger:
-    - platform:    state
-      entity_id:   media_player.vizio_smartcast
-      to:          'off'
-  action:
-      service:     script.lights_up
+#
+# - id:              TV_On
+#   alias:           "Vizio On"
+#   trigger:
+#     - platform:    state
+#       entity_id:   media_player.vizio_smartcast
+#       to:          'on'
+#   action:
+#     service:       script.lights_up
+#
+# - id:              TV_Off
+#   alias:           "Vizio Off"
+#   trigger:
+#     - platform:    state
+#       entity_id:   media_player.vizio_smartcast
+#       to:          'off'
+#   action:
+#       service:     script.lights_up

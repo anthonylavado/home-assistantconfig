@@ -45,4 +45,4 @@ xbox_time:
         - service:            media_player.select_source
           entity_id:          media_player.vizio_smartcast
           data:
-              source:         HDMI-4
+              source:         HDMI-1
