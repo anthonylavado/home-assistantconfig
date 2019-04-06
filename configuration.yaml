@@ -51,6 +51,10 @@ sensor:
 ##### END INTERACTION BLOCK #####
 
 ##### Interfaces Block #####
+homekit:
+  filter:
+    exclude_domains:
+      - media_player
 ios:
 alexa:
     smart_home:
